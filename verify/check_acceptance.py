@@ -1,6 +1,6 @@
-"""Check PLAN-R7 numerical acceptance against collected, unmodified lab receipts.
+"""Re-checks the acceptance rules for R7 against the raw, unmodified receipts in this repository.
 
-Usage: python accept_v12.py RECEIPT_DIRECTORY
+Usage: python3 verify/check_acceptance.py receipts
 The paired runner already checks verdict bytes and RSS on every timed run.
 """
 from collections import defaultdict
@@ -46,7 +46,7 @@ def paired(rows):
 combined = (root / "combined/runs.jsonl").exists()
 main = load("combined", 3200) if combined else load("main", 800)
 holdout = load("holdout", 200)
-fam = load("fam", 160)
+fam = load("families", 160)
 summary = {"main_pairs_per_cell": 40 if combined else 10}
 for name, rows in (("main", main), ("holdout", holdout), ("fam", fam)):
     by_cell = defaultdict(list)
@@ -91,20 +91,20 @@ for name, rows in (("main", main), ("holdout", holdout), ("fam", fam)):
 
 summary["s03_peak_rss_mib"] = max(r["peak_rss_mib"] for r in main if r["engine"] == "B" and r["scenario"] == "s03")
 check(summary["s03_peak_rss_mib"] <= 26, "s03 RSS exceeds 26 MiB")
-tails = [float(x) for x in re.findall(r"p99_all=([0-9.]+)", (root / "ut.log").read_text())]
+tails = [float(x) for x in re.findall(r"p99_all=([0-9.]+)", (root / "update_tail.log").read_text())]
 check(len(tails) == 48, f"expected 48 update-tail results, got {len(tails)}")
 summary["update_tail_max_us"] = max(tails)
 check(max(tails) < 2.5, "update tail p99 >= 2.5 us")
-gate = (root / "gate13.out").read_text()
+gate = (root / "release_gate.log").read_text()
 check("GATE PASSED\n" in gate, "stock gate did not pass")
 check(len(re.findall(r"planted bug \d+ caught", gate)) == 15, "stock mutants not 15/15")
-check("WIDE SUMMARY: 20 OK, 0 WARN, 0 FAIL" in (root / "wide.out").read_text(), "wide gate not 20/20")
-bm = (root / "mutations_bm.out").read_text()
+check("WIDE SUMMARY: 20 OK, 0 WARN, 0 FAIL" in (root / "wide_gate.log").read_text(), "wide gate not 20/20")
+bm = (root / "mutations_presence_bitmap.log").read_text()
 check(bm.count("CAUGHT") == 3 and "BUILDFAIL" not in bm, "bitmap mutations not 3/3")
-bv = (root / "mutations_bv.out").read_text()
+bv = (root / "mutations_bitvector.log").read_text()
 for number in (10, 11):
     check(re.search(rf"mutant {number} .*CAUGHT", bv) is not None, f"port mutant {number} not caught")
-robust = load("robust", 264)
+robust = load("robustness", 264)
 check(all(r["verdict"] == "MATCH" for r in robust), "robust verdict mismatch")
 rss60 = max(r["peak_rss_mib"] for r in robust if r["dataset"] == "T2a" and r["engine"] == "B")
 summary["60k_peak_rss_mib"] = rss60

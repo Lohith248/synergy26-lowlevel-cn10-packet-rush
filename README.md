@@ -23,6 +23,41 @@
 
 A firewall or router compares each packet against thousands of rules, where each rule constrains up to 13 fields: IP prefixes, port ranges, protocol, TCP flags, VLAN, region, length, TTL and more. The answer is the action of the **highest-priority rule that matches**. The organiser's reference does this with a linear scan, which is correct but slow: on the 40,000-rule scenario it manages **0.015 Mpps**. Our entry must give **exactly the same answers**, much faster. It is scored on throughput, p99 batch latency, peak memory (hard limit 32 MiB) and update latency, and it must support live rule inserts and deletes.
 
+<details open>
+<summary><b>A worked example (read this if you are new to packet classification)</b></summary>
+
+A **rule** says which packets it applies to and what to do with them. Any field it leaves out matches everything:
+
+| rule id | priority | matches | action |
+|---|---|---|---|
+| 1001 | 1000 | destination 192.168.7.9, port 443, TCP | ACCEPT |
+| 1002 | 999 | destination 192.168.7.0/24 (any port, any protocol) | DROP |
+
+A **packet** arrives: TCP, `10.1.2.3:51000 → 192.168.7.9:443`.
+
+- Only rule 1001 exists: it matches, so the verdict is **ACCEPT**.
+- Rule 1002 is inserted. Both rules match now. The **lower priority number wins** (999 beats 1000), so the verdict is
+  **DROP**. If two matching rules share a priority, the lower rule id wins.
+- Rule 1002 is deleted: the verdict is **ACCEPT** again. This is exactly what [the demo](#-demo) runs live.
+
+Now scale that up: up to **40,000 rules**, **13 fields** per rule (some are ranges, some are prefixes, some are
+"anything"), tens of millions of packets, and rules added and removed while traffic flows. Checking every rule for
+every packet (the organiser's reference) is always right but far too slow. The challenge is to be just as right while
+skipping almost all of that work.
+
+| term | meaning |
+|---|---|
+| **Mpps** | million packets per second. Full marks need 25 Mpps on one core. |
+| **p99 batch latency** | the time to classify a batch of 64 packets, at the 99th percentile. Full marks need 2.5 µs or less. |
+| **wildcard** | a field the rule does not care about ("any port"). |
+| **prefix** | an IP range written as address/length, e.g. `192.168.7.0/24` = the 256 addresses starting with 192.168.7. |
+| **rank** | how rules are ordered: priority first, then rule id. The best-ranked matching rule decides the verdict. |
+
+**How the score works.** Each of five scenarios scores out of 100: 40 for throughput, 25 for p99 batch latency, 20 for
+staying under 32 MiB of memory (above it the run scores zero), and 15 for update latency (full marks at 5 µs or less).
+The five scores are weighted 15/20/25/20/20 %. **A single wrong verdict scores zero.**
+</details>
+
 ## 🚀 Quick start (60 seconds)
 
 Linux, g++ 11 or newer, Python 3 (standard library only).
@@ -146,15 +181,15 @@ Full design and the exactness argument: **[docs/DESIGN.md](docs/DESIGN.md)**.
 
 | check | result | receipt |
 |---|---|---|
-| Release gate, g++ 13.4: fuzzing at 4 ISA levels, allocation-failure injection, interleaved updates, churn, ASAN/UBSAN | **PASSED** | [`receipts/gate13.out`](receipts/gate13.out) |
+| Release gate, g++ 13.4: fuzzing at 4 ISA levels, allocation-failure injection, interleaved updates, churn, ASAN/UBSAN | **PASSED** | [`receipts/release_gate.log`](receipts/release_gate.log) |
 | 15 deliberately planted bugs; the gate must catch each one | **15/15 caught** | same |
-| Extra mutations for R7 code (bitmaps, probe lists, port classes) | all correctness mutations caught | [`receipts/mutations_bm.out`](receipts/mutations_bm.out), [`mutations_bv.out`](receipts/mutations_bv.out) |
-| Wide differential gate: 20 configurations, fresh seeds, sanitizers | **20/20 OK** | [`receipts/wide.out`](receipts/wide.out) |
-| 40 extra rule-set families (1 to 60,000 rules, wildcard rate 0 to 1.0, priority ties) plus size edges | **264/264 identical** to the reference | [`receipts/robust.log`](receipts/robust.log) |
-| `-Werror` builds for x86-64, v2, v3, native, znver3, znver4, skylake-avx512, sapphirerapids | all compile | [`receipts/log.txt`](receipts/log.txt) |
+| Extra mutations for R7 code (bitmaps, probe lists, port classes) | all correctness mutations caught | [`receipts/mutations_presence_bitmap.log`](receipts/mutations_presence_bitmap.log), [`mutations_bitvector.log`](receipts/mutations_bitvector.log) |
+| Wide differential gate: 20 configurations, fresh seeds, sanitizers | **20/20 OK** | [`receipts/wide_gate.log`](receipts/wide_gate.log) |
+| 40 extra rule-set families (1 to 60,000 rules, wildcard rate 0 to 1.0, priority ties) plus size edges | **264/264 identical** to the reference | [`receipts/robustness.log`](receipts/robustness.log) |
+| `-Werror` builds for x86-64, v2, v3, native, znver3, znver4, skylake-avx512, sapphirerapids | all compile | [`receipts/acceptance_chain.log`](receipts/acceptance_chain.log) |
 | README build steps, sample benchmark vs baseline, live demo (g++ 13.4) | pass | [`receipts/package_check.txt`](receipts/package_check.txt) |
 | This repository from a fresh clone: `run_scenarios.sh`, `make test`, demo, prebuilt binaries | pass | [`receipts/repo_check.txt`](receipts/repo_check.txt) |
-| Machine-readable acceptance verdict | `"accepted": true` | [`receipts/acceptance.json`](receipts/acceptance.json); re-run with `python3 verify/accept_v12.py receipts` |
+| Machine-readable acceptance verdict | `"accepted": true` | [`receipts/acceptance.json`](receipts/acceptance.json); re-run with `python3 verify/check_acceptance.py receipts` |
 
 Run the fuzzers yourself: `bash verify/run_wide.sh starter 200` (Linux). More in [docs/BENCHMARKS.md](docs/BENCHMARKS.md).
 </details>
@@ -191,7 +226,7 @@ One packet flips **ACCEPT → DROP → ACCEPT** as a rule is inserted and delete
 | `demo/` | live update demo (`flip.cpp`) | team |
 | `verify/` | differential fuzzers, allocation-failure and churn tests, mutation lists, acceptance evaluator | team |
 | `docs/DESIGN.md`, `docs/BENCHMARKS.md` | architecture, exactness argument, measurements | team |
-| `receipts/` | raw logs behind every number above | team |
+| `receipts/` | raw logs behind every number above, indexed in [`receipts/README.md`](receipts/README.md) | team |
 | `bin/` | prebuilt static Linux binaries | team (built from this repo) |
 | `include/`, `baseline/`, `evaluator/`, `generator/`, `tests/`, `data/`, `Makefile`, `CMakeLists.txt`, `Dockerfile`, `SPECIFICATION.md`, `docs/organiser/` | the organiser's starter pack, **unchanged** | organiser |
 
