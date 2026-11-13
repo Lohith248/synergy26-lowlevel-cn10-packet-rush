@@ -1,0 +1,32 @@
+In function 'void operator delete(void*, std::size_t)',
+    inlined from 'void __gnu_cxx::new_allocator<_Tp>::deallocate(_Tp*, __gnu_cxx::new_allocator<_Tp>::size_type) [with _Tp = unsigned int]' at ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/ext/new_allocator.h:145:19,
+    inlined from 'constexpr void std::allocator< <template-parameter-1-1> >::deallocate(_Tp*, std::size_t) [with _Tp = unsigned int]' at ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/allocator.h:199:35,
+    inlined from 'static constexpr void std::allocator_traits<std::allocator<_CharT> >::deallocate(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, std::allocator_traits<std::allocator<_CharT> >::pointer, std::allocator_traits<std::allocator<_CharT> >::size_type) [with _Tp = unsigned int]' at ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/alloc_traits.h:496:23,
+    inlined from 'void std::_Vector_base<_Tp, _Alloc>::_M_deallocate(std::_Vector_base<_Tp, _Alloc>::pointer, std::size_t) [with _Tp = unsigned int; _Alloc = std::allocator<unsigned int>]' at ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_vector.h:354:19,
+    inlined from 'std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = unsigned int; _Alloc = std::allocator<unsigned int>]' at ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_vector.h:335:15,
+    inlined from 'std::vector<_Tp, _Alloc>::~vector() [with _Tp = unsigned int; _Alloc = std::allocator<unsigned int>]' at ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_vector.h:683:7,
+    inlined from 'void wide_begin(uint64_t)' at ~/lab/g1/gate/widegen.h:115:30:
+~/lab/g1/gate/alloc_fail_wide.cpp:51:64: warning: 'void free(void*)' called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+   51 | void operator delete(void* p, std::size_t) noexcept { std::free(p); }
+      |                                                       ~~~~~~~~~^~~
+In file included from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu/bits/c++allocator.h:33,
+                 from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/allocator.h:46,
+                 from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/string:41,
+                 from ~/lab/r3gate/kit/include/types.h:4,
+                 from ~/lab/r3gate/kit/include/classifier_interface.h:3,
+                 from ~/lab/r4/v13/classifier.h:5,
+                 from ~/lab/g1/gate/alloc_fail_wide.cpp:5:
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/ext/new_allocator.h: In function 'void wide_begin(uint64_t)':
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/ext/new_allocator.h:127:48: note: returned from 'void* operator new(std::size_t)'
+  127 |         return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+      |                                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+In file included from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/string:52,
+                 from ~/lab/r3gate/kit/include/types.h:4,
+                 from ~/lab/r3gate/kit/include/classifier_interface.h:3,
+                 from ~/lab/r4/v13/classifier.h:5,
+                 from ~/lab/r4/v13/classifier.cpp:26:
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, std::vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_heap.h:223:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  223 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~

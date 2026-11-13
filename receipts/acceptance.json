@@ -1,0 +1,914 @@
+{
+  "main_pairs_per_cell": 40,
+  "main": {
+    "cells": [
+      {
+        "build": "native",
+        "seed": 7,
+        "scenario": "s01",
+        "mpps_ratio": 0.9971413377834055,
+        "median_batch_ratio": 0.9932795698924732,
+        "paired_batch_delta": -0.0044755042172932025,
+        "paired_batch_range": [
+          -0.1549367088607595,
+          0.4964654703643283
+        ],
+        "mpps_A": 34.0369,
+        "mpps_B": 33.9396
+      },
+      {
+        "build": "native",
+        "seed": 7,
+        "scenario": "s02",
+        "mpps_ratio": 1.2017795671387563,
+        "median_batch_ratio": 0.8209934395501406,
+        "paired_batch_delta": -0.1611062312360556,
+        "paired_batch_range": [
+          -0.25676741130091996,
+          -0.07859531772575257
+        ],
+        "mpps_A": 16.790599999999998,
+        "mpps_B": 20.1786
+      },
+      {
+        "build": "native",
+        "seed": 7,
+        "scenario": "s03",
+        "mpps_ratio": 1.1751298873677423,
+        "median_batch_ratio": 0.839155613674575,
+        "paired_batch_delta": -0.15838171294018538,
+        "paired_batch_range": [
+          -0.24558365084863187,
+          -0.0505141620061339
+        ],
+        "mpps_A": 11.866050000000001,
+        "mpps_B": 13.94415
+      },
+      {
+        "build": "native",
+        "seed": 7,
+        "scenario": "s04",
+        "mpps_ratio": 1.0009187174603387,
+        "median_batch_ratio": 1.006385068762279,
+        "paired_batch_delta": 0.006465542915003786,
+        "paired_batch_range": [
+          -0.13760683760683767,
+          0.12487611496531237
+        ],
+        "mpps_A": 59.4851,
+        "mpps_B": 59.53975
+      },
+      {
+        "build": "native",
+        "seed": 7,
+        "scenario": "s05",
+        "mpps_ratio": 1.1954258871536942,
+        "median_batch_ratio": 0.8200668896321072,
+        "paired_batch_delta": -0.18066751239072482,
+        "paired_batch_range": [
+          -0.24839290305991257,
+          -0.10744710085188225
+        ],
+        "mpps_A": 16.8601,
+        "mpps_B": 20.155
+      },
+      {
+        "build": "native",
+        "seed": 42,
+        "scenario": "s01",
+        "mpps_ratio": 1.0144518437222914,
+        "median_batch_ratio": 0.98343949044586,
+        "paired_batch_delta": -0.014499001440116843,
+        "paired_batch_range": [
+          -0.15947006869479874,
+          0.15708358032009473
+        ],
+        "mpps_A": 32.255399999999995,
+        "mpps_B": 32.72154999999999
+      },
+      {
+        "build": "native",
+        "seed": 42,
+        "scenario": "s02",
+        "mpps_ratio": 1.1999641432759207,
+        "median_batch_ratio": 0.8247422680412372,
+        "paired_batch_delta": -0.1680164743764445,
+        "paired_batch_range": [
+          -0.2579196217494091,
+          -0.014906518443658423
+        ],
+        "mpps_A": 15.8966,
+        "mpps_B": 19.07535
+      },
+      {
+        "build": "native",
+        "seed": 42,
+        "scenario": "s03",
+        "mpps_ratio": 1.297098598250558,
+        "median_batch_ratio": 0.7686165596250651,
+        "paired_batch_delta": -0.2325494752623688,
+        "paired_batch_range": [
+          -0.2874688796680498,
+          -0.1450767841011743
+        ],
+        "mpps_A": 10.9292,
+        "mpps_B": 14.17625
+      },
+      {
+        "build": "native",
+        "seed": 42,
+        "scenario": "s04",
+        "mpps_ratio": 1.0052829233222997,
+        "median_batch_ratio": 0.9918068132815868,
+        "paired_batch_delta": -0.008616977041195129,
+        "paired_batch_range": [
+          -0.04909560723514206,
+          0.015665796344647598
+        ],
+        "mpps_A": 54.1083,
+        "mpps_B": 54.394149999999996
+      },
+      {
+        "build": "native",
+        "seed": 42,
+        "scenario": "s05",
+        "mpps_ratio": 1.2305376724890276,
+        "median_batch_ratio": 0.7986996749187296,
+        "paired_batch_delta": -0.178052690471231,
+        "paired_batch_range": [
+          -0.2542582078499136,
+          -0.11373165618448633
+        ],
+        "mpps_A": 15.8126,
+        "mpps_B": 19.458
+      },
+      {
+        "build": "native",
+        "seed": 1001,
+        "scenario": "s01",
+        "mpps_ratio": 1.0103569663496135,
+        "median_batch_ratio": 0.972936030617824,
+        "paired_batch_delta": -0.014414949331584381,
+        "paired_batch_range": [
+          -0.28989976869699297,
+          0.18954659949622155
+        ],
+        "mpps_A": 34.599900000000005,
+        "mpps_B": 34.95825
+      },
+      {
+        "build": "native",
+        "seed": 1001,
+        "scenario": "s02",
+        "mpps_ratio": 1.2204646670931552,
+        "median_batch_ratio": 0.8058755014882878,
+        "paired_batch_delta": -0.2058230041631275,
+        "paired_batch_range": [
+          -0.48798156075074084,
+          -0.09264232008592921
+        ],
+        "mpps_A": 16.2568,
+        "mpps_B": 19.840850000000003
+      },
+      {
+        "build": "native",
+        "seed": 1001,
+        "scenario": "s03",
+        "mpps_ratio": 1.2231951177285318,
+        "median_batch_ratio": 0.8103670909426307,
+        "paired_batch_delta": -0.19718305027875127,
+        "paired_batch_range": [
+          -0.27120822622107965,
+          -0.09545115585384034
+        ],
+        "mpps_A": 11.552,
+        "mpps_B": 14.13035
+      },
+      {
+        "build": "native",
+        "seed": 1001,
+        "scenario": "s04",
+        "mpps_ratio": 0.9955794814969966,
+        "median_batch_ratio": 1.0078508341511285,
+        "paired_batch_delta": 0.010817476554034977,
+        "paired_batch_range": [
+          -0.3828606658446364,
+          0.4584450402144771
+        ],
+        "mpps_A": 59.2012,
+        "mpps_B": 58.939499999999995
+      },
+      {
+        "build": "native",
+        "seed": 1001,
+        "scenario": "s05",
+        "mpps_ratio": 1.187038330476009,
+        "median_batch_ratio": 0.8309564307209211,
+        "paired_batch_delta": -0.17373733659379653,
+        "paired_batch_range": [
+          -0.3937428462418924,
+          -0.11504424778761069
+        ],
+        "mpps_A": 16.536450000000002,
+        "mpps_B": 19.6294
+      },
+      {
+        "build": "native",
+        "seed": 2026,
+        "scenario": "s01",
+        "mpps_ratio": 1.045353325415677,
+        "median_batch_ratio": 0.9650545149566676,
+        "paired_batch_delta": -0.026348593605313053,
+        "paired_batch_range": [
+          -0.1892450879007238,
+          0.19431891542930924
+        ],
+        "mpps_A": 35.0272,
+        "mpps_B": 36.6158
+      },
+      {
+        "build": "native",
+        "seed": 2026,
+        "scenario": "s02",
+        "mpps_ratio": 1.1515830124338229,
+        "median_batch_ratio": 0.8536620530565167,
+        "paired_batch_delta": -0.14032786619211574,
+        "paired_batch_range": [
+          -0.2071791972866025,
+          -0.05570291777188319
+        ],
+        "mpps_A": 18.1521,
+        "mpps_B": 20.90365
+      },
+      {
+        "build": "native",
+        "seed": 2026,
+        "scenario": "s03",
+        "mpps_ratio": 1.1701870329575397,
+        "median_batch_ratio": 0.8499306518723995,
+        "paired_batch_delta": -0.14323881126464827,
+        "paired_batch_range": [
+          -0.2575273338940287,
+          -0.01991798476859996
+        ],
+        "mpps_A": 11.5755,
+        "mpps_B": 13.5455
+      },
+      {
+        "build": "native",
+        "seed": 2026,
+        "scenario": "s04",
+        "mpps_ratio": 0.994757681574449,
+        "median_batch_ratio": 1.0045402951191829,
+        "paired_batch_delta": 0.01159367867829364,
+        "paired_batch_range": [
+          -0.08673469387755095,
+          0.12180974477958229
+        ],
+        "mpps_A": 68.443,
+        "mpps_B": 68.08420000000001
+      },
+      {
+        "build": "native",
+        "seed": 2026,
+        "scenario": "s05",
+        "mpps_ratio": 1.1805393507600395,
+        "median_batch_ratio": 0.8444668878949646,
+        "paired_batch_delta": -0.14599388855855805,
+        "paired_batch_range": [
+          -0.297558494404883,
+          -0.0791907514450867
+        ],
+        "mpps_A": 18.12735,
+        "mpps_B": 21.40005
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 7,
+        "scenario": "s01",
+        "mpps_ratio": 0.9799572607385297,
+        "median_batch_ratio": 1.0237057220708445,
+        "paired_batch_delta": 0.010198660873744103,
+        "paired_batch_range": [
+          -0.1209302325581395,
+          0.5081788440567065
+        ],
+        "mpps_A": 34.4414,
+        "mpps_B": 33.7511
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 7,
+        "scenario": "s02",
+        "mpps_ratio": 1.2432854674545906,
+        "median_batch_ratio": 0.7998632946001367,
+        "paired_batch_delta": -0.1944783206486782,
+        "paired_batch_range": [
+          -0.27143608627038396,
+          -0.05116412762288014
+        ],
+        "mpps_A": 17.218249999999998,
+        "mpps_B": 21.4072
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 7,
+        "scenario": "s03",
+        "mpps_ratio": 1.1153149906914095,
+        "median_batch_ratio": 0.8821029289476116,
+        "paired_batch_delta": -0.13437904512761317,
+        "paired_batch_range": [
+          -0.2737226277372262,
+          0.0050741608118658466
+        ],
+        "mpps_A": 11.655899999999999,
+        "mpps_B": 13.0
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 7,
+        "scenario": "s04",
+        "mpps_ratio": 0.9923286442090549,
+        "median_batch_ratio": 1.0083210964268232,
+        "paired_batch_delta": 0.006597122302158254,
+        "paired_batch_range": [
+          -0.10383944153577662,
+          0.16855087358684484
+        ],
+        "mpps_A": 59.5136,
+        "mpps_B": 59.057050000000004
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 7,
+        "scenario": "s05",
+        "mpps_ratio": 1.1575549450549452,
+        "median_batch_ratio": 0.857768980630567,
+        "paired_batch_delta": -0.15839901495148906,
+        "paired_batch_range": [
+          -0.23530954879328436,
+          -0.06502177068214798
+        ],
+        "mpps_A": 17.836,
+        "mpps_B": 20.64615
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 42,
+        "scenario": "s01",
+        "mpps_ratio": 0.9974354280134864,
+        "median_batch_ratio": 1.0182539682539682,
+        "paired_batch_delta": 0.014674774243264799,
+        "paired_batch_range": [
+          -0.15739821251241304,
+          0.23991275899672848
+        ],
+        "mpps_A": 32.7735,
+        "mpps_B": 32.689449999999994
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 42,
+        "scenario": "s02",
+        "mpps_ratio": 1.222535149563623,
+        "median_batch_ratio": 0.8119074706105424,
+        "paired_batch_delta": -0.19790879741908668,
+        "paired_batch_range": [
+          -0.29893399863914716,
+          -0.06527415143603132
+        ],
+        "mpps_A": 15.97815,
+        "mpps_B": 19.53385
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 42,
+        "scenario": "s03",
+        "mpps_ratio": 1.3413692647145439,
+        "median_batch_ratio": 0.7409933543196923,
+        "paired_batch_delta": -0.24894424895168699,
+        "paired_batch_range": [
+          -0.30458028871858844,
+          -0.1599020293911827
+        ],
+        "mpps_A": 11.03585,
+        "mpps_B": 14.803149999999999
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 42,
+        "scenario": "s04",
+        "mpps_ratio": 1.0078741620464646,
+        "median_batch_ratio": 0.9965561773568661,
+        "paired_batch_delta": -0.003935076421326067,
+        "paired_batch_range": [
+          -0.042132416165090225,
+          0.2433361994840928
+        ],
+        "mpps_A": 53.821600000000004,
+        "mpps_B": 54.245400000000004
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 42,
+        "scenario": "s05",
+        "mpps_ratio": 1.2389664640003966,
+        "median_batch_ratio": 0.7947408731171816,
+        "paired_batch_delta": -0.18841795802472439,
+        "paired_batch_range": [
+          -0.2761445783132531,
+          -0.10152953586497881
+        ],
+        "mpps_A": 16.134900000000002,
+        "mpps_B": 19.9906
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 1001,
+        "scenario": "s01",
+        "mpps_ratio": 1.0130623219524795,
+        "median_batch_ratio": 0.9796968056307526,
+        "paired_batch_delta": -0.01706103314086893,
+        "paired_batch_range": [
+          -0.36210762331838564,
+          0.2176913425345044
+        ],
+        "mpps_A": 34.06745,
+        "mpps_B": 34.51245
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 1001,
+        "scenario": "s02",
+        "mpps_ratio": 1.239955739706174,
+        "median_batch_ratio": 0.8022613726005785,
+        "paired_batch_delta": -0.19924908128542657,
+        "paired_batch_range": [
+          -0.28310844577711136,
+          -0.05847653244421647
+        ],
+        "mpps_A": 16.6289,
+        "mpps_B": 20.6191
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 1001,
+        "scenario": "s03",
+        "mpps_ratio": 1.2727358083914113,
+        "median_batch_ratio": 0.7823974586564516,
+        "paired_batch_delta": -0.20545886469941504,
+        "paired_batch_range": [
+          -0.36761963952765686,
+          -0.031022596706242966
+        ],
+        "mpps_A": 11.71555,
+        "mpps_B": 14.9108
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 1001,
+        "scenario": "s04",
+        "mpps_ratio": 1.0043656659255302,
+        "median_batch_ratio": 1.0009876543209877,
+        "paired_batch_delta": 0.002469426612140224,
+        "paired_batch_range": [
+          -0.11668185961713762,
+          0.1375770020533882
+        ],
+        "mpps_A": 60.380250000000004,
+        "mpps_B": 60.64385
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 1001,
+        "scenario": "s05",
+        "mpps_ratio": 1.269639782689371,
+        "median_batch_ratio": 0.7865344467640919,
+        "paired_batch_delta": -0.20604018631188692,
+        "paired_batch_range": [
+          -0.2901631240731587,
+          -0.10487404162102953
+        ],
+        "mpps_A": 16.4373,
+        "mpps_B": 20.86945
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 2026,
+        "scenario": "s01",
+        "mpps_ratio": 0.9833842061047325,
+        "median_batch_ratio": 1.024971623155505,
+        "paired_batch_delta": 0.018043802887008464,
+        "paired_batch_range": [
+          -0.17155266015200876,
+          0.2106299212598426
+        ],
+        "mpps_A": 35.71,
+        "mpps_B": 35.11665
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 2026,
+        "scenario": "s02",
+        "mpps_ratio": 1.1810942537659452,
+        "median_batch_ratio": 0.8513313609467457,
+        "paired_batch_delta": -0.1428611982204559,
+        "paired_batch_range": [
+          -0.22497836746466693,
+          -0.013559322033898313
+        ],
+        "mpps_A": 18.547800000000002,
+        "mpps_B": 21.9067
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 2026,
+        "scenario": "s03",
+        "mpps_ratio": 1.204627556731454,
+        "median_batch_ratio": 0.8284859253717386,
+        "paired_batch_delta": -0.15911083588705482,
+        "paired_batch_range": [
+          -0.2347284060552094,
+          0.006417516043790039
+        ],
+        "mpps_A": 11.7924,
+        "mpps_B": 14.205449999999999
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 2026,
+        "scenario": "s04",
+        "mpps_ratio": 0.9785491377030237,
+        "median_batch_ratio": 1.0045070422535212,
+        "paired_batch_delta": 0.007373812168332772,
+        "paired_batch_range": [
+          -0.09468085106382973,
+          0.6732329084588644
+        ],
+        "mpps_A": 68.62195,
+        "mpps_B": 67.14995
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 2026,
+        "scenario": "s05",
+        "mpps_ratio": 1.182824043751196,
+        "median_batch_ratio": 0.8428971824752914,
+        "paired_batch_delta": -0.15785125032530062,
+        "paired_batch_range": [
+          -0.2223796033994333,
+          -0.06734317343173424
+        ],
+        "mpps_A": 18.55035,
+        "mpps_B": 21.9418
+      }
+    ],
+    "weighted": [
+      {
+        "build": "native",
+        "seed": 7,
+        "A": 80.28080374313126,
+        "B": 83.85509988425792,
+        "delta": 3.9493871178549114
+      },
+      {
+        "build": "native",
+        "seed": 42,
+        "A": 78.68810129685801,
+        "B": 83.01174319563142,
+        "delta": 4.172266119902204
+      },
+      {
+        "build": "native",
+        "seed": 1001,
+        "A": 79.2510602256866,
+        "B": 83.93341101843555,
+        "delta": 4.504585019845905
+      },
+      {
+        "build": "native",
+        "seed": 2026,
+        "A": 81.0955296303957,
+        "B": 84.67216156992748,
+        "delta": 3.517891769845086
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 7,
+        "A": 80.93573478765256,
+        "B": 84.61136454339416,
+        "delta": 3.164916703322028
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 42,
+        "A": 78.99650939049585,
+        "B": 84.18301121789642,
+        "delta": 4.8908633954862
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 1001,
+        "A": 79.82324966792785,
+        "B": 85.15584339475348,
+        "delta": 5.4295518474338
+      },
+      {
+        "build": "x86-64-v3",
+        "seed": 2026,
+        "A": 82.03053337324013,
+        "B": 85.70807191490559,
+        "delta": 4.123732551163236
+      }
+    ]
+  },
+  "geomean_ratios": {
+    "s01": 1.0049563006920228,
+    "s02": 1.2072356787456449,
+    "s03": 1.2229771807034577,
+    "s04": 0.9974177356078912,
+    "s05": 1.2048155846847686
+  },
+  "holdout": {
+    "cells": [
+      {
+        "build": "native",
+        "seed": 11,
+        "scenario": "s01",
+        "mpps_ratio": 1.0600433558067561,
+        "median_batch_ratio": 0.9261275272161742,
+        "paired_batch_delta": -0.03136978631698972,
+        "paired_batch_range": [
+          -0.16374871266735314,
+          0.01593830334190227
+        ],
+        "mpps_A": 32.683049999999994,
+        "mpps_B": 34.64545
+      },
+      {
+        "build": "native",
+        "seed": 11,
+        "scenario": "s02",
+        "mpps_ratio": 1.3087190363404306,
+        "median_batch_ratio": 0.7728479332574896,
+        "paired_batch_delta": -0.22567717375899515,
+        "paired_batch_range": [
+          -0.27772202709483196,
+          -0.16679800367743625
+        ],
+        "mpps_A": 15.7483,
+        "mpps_B": 20.610100000000003
+      },
+      {
+        "build": "native",
+        "seed": 11,
+        "scenario": "s03",
+        "mpps_ratio": 1.289249336722388,
+        "median_batch_ratio": 0.7766475767159585,
+        "paired_batch_delta": -0.2183763191364254,
+        "paired_batch_range": [
+          -0.281144211238998,
+          -0.1768456375838927
+        ],
+        "mpps_A": 10.7798,
+        "mpps_B": 13.897849999999998
+      },
+      {
+        "build": "native",
+        "seed": 11,
+        "scenario": "s04",
+        "mpps_ratio": 1.0353317664799009,
+        "median_batch_ratio": 0.9896500739280434,
+        "paired_batch_delta": -0.015190492102999054,
+        "paired_batch_range": [
+          -0.12510860121633371,
+          0.15139031925849644
+        ],
+        "mpps_A": 59.9503,
+        "mpps_B": 62.06845
+      },
+      {
+        "build": "native",
+        "seed": 11,
+        "scenario": "s05",
+        "mpps_ratio": 1.2377111261411486,
+        "median_batch_ratio": 0.799771602588504,
+        "paired_batch_delta": -0.19408358406174497,
+        "paired_batch_range": [
+          -0.24810188586823423,
+          -0.13271276595744674
+        ],
+        "mpps_A": 16.04195,
+        "mpps_B": 19.8553
+      },
+      {
+        "build": "native",
+        "seed": 23,
+        "scenario": "s01",
+        "mpps_ratio": 1.0099604891710023,
+        "median_batch_ratio": 0.988776655443322,
+        "paired_batch_delta": 0.005297792080635799,
+        "paired_batch_range": [
+          -0.11715713492504154,
+          0.12683237731038877
+        ],
+        "mpps_A": 35.6358,
+        "mpps_B": 35.990750000000006
+      },
+      {
+        "build": "native",
+        "seed": 23,
+        "scenario": "s02",
+        "mpps_ratio": 1.1749526135344062,
+        "median_batch_ratio": 0.8471733838247226,
+        "paired_batch_delta": -0.15065071267455488,
+        "paired_batch_range": [
+          -0.2027625749283294,
+          -0.06583679114799457
+        ],
+        "mpps_A": 16.829700000000003,
+        "mpps_B": 19.774099999999997
+      },
+      {
+        "build": "native",
+        "seed": 23,
+        "scenario": "s03",
+        "mpps_ratio": 1.2106440510159764,
+        "median_batch_ratio": 0.808512460392224,
+        "paired_batch_delta": -0.14854244547656426,
+        "paired_batch_range": [
+          -0.22024489795918367,
+          -0.12410986775178012
+        ],
+        "mpps_A": 10.70645,
+        "mpps_B": 12.9617
+      },
+      {
+        "build": "native",
+        "seed": 23,
+        "scenario": "s04",
+        "mpps_ratio": 1.0099407200689674,
+        "median_batch_ratio": 0.9943548387096774,
+        "paired_batch_delta": -0.00483972859419296,
+        "paired_batch_range": [
+          -0.05679405520169856,
+          0.519726459758022
+        ],
+        "mpps_A": 33.7551,
+        "mpps_B": 34.09065
+      },
+      {
+        "build": "native",
+        "seed": 23,
+        "scenario": "s05",
+        "mpps_ratio": 1.1811094655882162,
+        "median_batch_ratio": 0.8471255478216035,
+        "paired_batch_delta": -0.15601458541791413,
+        "paired_batch_range": [
+          -0.19227857683573046,
+          -0.054846592451805565
+        ],
+        "mpps_A": 16.23935,
+        "mpps_B": 19.18045
+      }
+    ],
+    "weighted": [
+      {
+        "build": "native",
+        "seed": 11,
+        "A": 79.25138784289564,
+        "B": 84.15136632279327,
+        "delta": 5.033898248567077
+      },
+      {
+        "build": "native",
+        "seed": 23,
+        "A": 79.662668883908,
+        "B": 82.84572983189983,
+        "delta": 3.4089928576937254
+      }
+    ]
+  },
+  "fam": {
+    "cells": [
+      {
+        "build": "native",
+        "seed": 9101,
+        "scenario": "d1",
+        "mpps_ratio": 1.1332835633664486,
+        "median_batch_ratio": 0.8797241745126642,
+        "paired_batch_delta": -0.1131955528879835,
+        "paired_batch_range": [
+          -0.17017453798767967,
+          -0.09018143009605128
+        ],
+        "mpps_A": 16.34185,
+        "mpps_B": 18.51995
+      },
+      {
+        "build": "native",
+        "seed": 9101,
+        "scenario": "d2",
+        "mpps_ratio": 1.1162430126721283,
+        "median_batch_ratio": 0.8990432200593864,
+        "paired_batch_delta": -0.13061814388374787,
+        "paired_batch_range": [
+          -0.24822485207100586,
+          0.05192982456140349
+        ],
+        "mpps_A": 20.67135,
+        "mpps_B": 23.07425
+      },
+      {
+        "build": "native",
+        "seed": 9101,
+        "scenario": "d3",
+        "mpps_ratio": 1.270448325384782,
+        "median_batch_ratio": 0.7827888257575757,
+        "paired_batch_delta": -0.21250135889526522,
+        "paired_batch_range": [
+          -0.2564942663234261,
+          -0.13837730214036825
+        ],
+        "mpps_A": 14.761600000000001,
+        "mpps_B": 18.75385
+      },
+      {
+        "build": "native",
+        "seed": 9101,
+        "scenario": "d4",
+        "mpps_ratio": 1.2299350415710733,
+        "median_batch_ratio": 0.8225906735751296,
+        "paired_batch_delta": -0.17454489201931478,
+        "paired_batch_range": [
+          -0.22317772317772322,
+          -0.08622112211221122
+        ],
+        "mpps_A": 12.92365,
+        "mpps_B": 15.89525
+      },
+      {
+        "build": "native",
+        "seed": 9101,
+        "scenario": "d5",
+        "mpps_ratio": 1.145198762155759,
+        "median_batch_ratio": 0.865192206424434,
+        "paired_batch_delta": -0.13425415585132816,
+        "paired_batch_range": [
+          -0.18362023995826815,
+          -0.0819224467504096
+        ],
+        "mpps_A": 32.6697,
+        "mpps_B": 37.4133
+      },
+      {
+        "build": "native",
+        "seed": 9101,
+        "scenario": "d6",
+        "mpps_ratio": 0.9965998012669234,
+        "median_batch_ratio": 1.0007196833393306,
+        "paired_batch_delta": 0.0021765281131275183,
+        "paired_batch_range": [
+          -0.03738317757009346,
+          0.7
+        ],
+        "mpps_A": 45.0856,
+        "mpps_B": 44.9323
+      },
+      {
+        "build": "native",
+        "seed": 9101,
+        "scenario": "d7",
+        "mpps_ratio": 1.1424149462454742,
+        "median_batch_ratio": 0.8716998610467811,
+        "paired_batch_delta": -0.13731022747579769,
+        "paired_batch_range": [
+          -0.2569275105298161,
+          -0.0942962281508739
+        ],
+        "mpps_A": 14.4732,
+        "mpps_B": 16.534399999999998
+      },
+      {
+        "build": "native",
+        "seed": 9101,
+        "scenario": "d8",
+        "mpps_ratio": 1.2383855103372539,
+        "median_batch_ratio": 0.8064516129032259,
+        "paired_batch_delta": -0.19517016590594927,
+        "paired_batch_range": [
+          -0.26039035591274406,
+          -0.0840441545408932
+        ],
+        "mpps_A": 15.70775,
+        "mpps_B": 19.45225
+      }
+    ],
+    "weighted": []
+  },
+  "s03_peak_rss_mib": 24.512,
+  "update_tail_max_us": 0.8,
+  "60k_peak_rss_mib": 29.703,
+  "failures": [],
+  "accepted": true
+}

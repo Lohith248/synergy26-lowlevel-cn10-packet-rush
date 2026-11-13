@@ -1,0 +1,21 @@
+fuzz_wide|300|s/if (B.first\[b\] > best) return;/if (B.first[b] >= best) return;/
+fuzz_wide|300|s/                if (rk > best) return;/                if (rk >= best) return;/
+fuzz_wide|300|s/        if (B.dead) acc = _mm256_and_si256(acc, _mm256_load_si256(reinterpret_cast<const __m256i\*>(\&B.alive\[b\])));/        (void)0;/
+fuzz_wide|300|s/b\[i\] = uint16_t(~R\[i\].nhi\[lane\]) >> (D == 256 \&\& lane < 4 ? 8 : 0);/b[i] = uint16_t(~R[i].nhi[lane]) >> (D == 256 ? 8 : 0);/
+fuzz_wide|300|s/    map\[L\] = 1;/    map[L] = 0;/
+fuzz_wide|300|s/B.base\[f\] + (val\[i\] >= L ? 1u : cls_of\[val\[i\]\])/B.base[f] + (val[i] >= L ? 0u : cls_of[val[i]])/
+fuzz_wide|300|s/    for (uint32_t c = 0; c < ncls; ++c) std::memcpy(bv_row(B, B.base\[f\] + c), wild.data(), size_t(W) \* sizeof(BvBlk));/    (void)wild;/
+fuzz_wide|300|s/if (hi\[i\] + 1 < D) starts.push_back(hi\[i\] + 1);/if (hi[i] + 1 < D) starts.push_back(hi[i]);/
+fuzz_wide|300|s/            chi\[i\] = hi\[i\] >> shift;/            chi[i] = (hi[i] >> shift) ? (hi[i] >> shift) - 1 : 0;/
+fuzz_wide|300|s/if (full ? free_blk\[j\] != 0 : unnamed_in(s0, e0)) bit_set/if (false) bit_set/
+fuzz_wide|300|s/map\[port\] = uint8_t(port >> shift);/map[port] = uint8_t((port >> shift) ^ 1);/
+fuzz_wide|300|s/    B.alive\[i >> 8\].w\[(i >> 6) \& 3\] \&= ~(uint64_t{1} << (i \& 63));/    (void)i;/
+fuzz_wide|300|s/B.first\[b\] = B.rank\[size_t(b) \* 256\];/B.first[b] = B.rank[std::min<size_t>(size_t(b) * 256 + 255, n - 1)];/
+fuzz_wide|300|s/        if ((c \& m) == v) bit_set/        if ((c \& m) == (v | 1u)) bit_set/
+churn_wide|40000 128 2|s/residual_recs(store_, long(pos), nullptr)/residual_recs(store_, -1, nullptr)/
+churn_wide|40000 128 2|s/grown_bv = bv_build(residual_recs(store_, pos, \&rec));/grown_bv = bv_build(residual_recs(store_, -1, \&rec));/
+bv_directed||s/if (B.first\[b\] > best) return;/if (B.first[b] >= best) return;/
+bv_directed||s/                if (rk > best) return;/                if (rk >= best) return;/
+bv_directed||s/residual_recs(store_, long(pos), nullptr)/residual_recs(store_, -1, nullptr)/
+bv_directed||s/grown_bv = bv_build(residual_recs(store_, pos, \&rec));/grown_bv = bv_build(residual_recs(store_, -1, \&rec));/
+bv_directed||s/B.first\[b\] = B.rank\[size_t(b) \* 256\];/B.first[b] = B.rank[std::min<size_t>(size_t(b) * 256 + 1, n - 1)];/

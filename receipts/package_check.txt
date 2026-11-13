@@ -1,0 +1,39 @@
+x86_64-conda-linux-gnu-g++ (conda-forge gcc 13.4.0-20) 13.4.0
+b25958881c9abb9d07aaf2edb4b4edbec158e723870eb95344259c9634f3c8bb  ~/lab/res/ev13/package-check/kit/starter/classifier.cpp
+cbbff101328a5e9cb49bf16db8ab51c896f073def2479bc65c8cff465a6cb68b  ~/lab/res/ev13/package-check/kit/starter/classifier.h
+x86_64-conda-linux-gnu-g++ -O3 -std=c++20 -march=native -Wall -Wextra -Werror -Iinclude -o benchmark_baseline evaluator/benchmark.cpp baseline/linear_classifier.cpp starter/classifier.cpp
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from starter/classifier.cpp:30:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+x86_64-conda-linux-gnu-g++ -O3 -std=c++20 -march=native -Wall -Wextra -Werror -Iinclude -o benchmark_starter evaluator/benchmark.cpp baseline/linear_classifier.cpp starter/classifier.cpp
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from starter/classifier.cpp:30:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+>>> Benchmark complete for [RewriteR1]
+    Throughput:        21.4659 Mpps
+    P99 Batch Latency: 3.209 us
+    Peak Memory:       4.92188 MiB
+    P99 Update:        0.693 us
+>>> Benchmark complete for [BaselineLinearClassifier]
+    Throughput:        0.953953 Mpps
+    P99 Batch Latency: 103.111 us
+    Peak Memory:       3.38281 MiB
+    P99 Update:        0 us
+README build and sample verdicts PASSED
+[a] rules: 1000 (~/lab/res/ev13/package-check/kit/data/sample_rules.bin); engines ready: RewriteR1 + BaselineLinearClassifier
+[b] packet: 10.1.2.3:51000 -> 192.168.7.9:443 proto 6 flags 0x02 region 3 vlan 100 iface 2 dscp 0 ttl 64 len 1500 (TCP SYN)
+    no existing rule matches (default verdict is DROP); the ACCEPT rule gets priority 1000
+[b] verdict: ACCEPT  (rule 1001: exact-match ACCEPT, priority 1000)   baseline agrees
+[c] insert rule 1002 (DROP dst 192.168.7.0/24, priority 999): verdict: DROP (insert took 0.79 us)   baseline agrees
+[d] delete rule 1002: verdict: ACCEPT (delete took 0.57 us)   baseline agrees
+[f] 100000 packets: 0 differences (half crafted to hit rules, batches of 64; 12224 ACCEPT, 87776 other)
+    ours: 16.94 Mpps over this run (this machine, not a benchmark)
+RESULT: all checks passed

@@ -1,0 +1,2 @@
+insert p99 0.569 us, delete p99 0.547 us, peak RSS 8.33 MiB (after churn 8.33 MiB), 25664 checks
+OK: interleaved release check

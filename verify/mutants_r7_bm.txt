@@ -1,0 +1,3 @@
+fuzz_wide|300|s/            t.bm\[bi >> 6\] |= uint64_t{1} << (bi \& 63);/            (void)bi;/
+fuzz_wide|300|s/uint32_t(tb.bm\[bi >> 6\] >> (bi \& 63))/uint32_t(tb.bm[(bi ^ 1u) >> 6] >> ((bi ^ 1u) \& 63))/
+fuzz_wide|300|s/bk\[nbk\] = {r, slot_n(\*s), item\[j\].pt >> 4};/bk[nbk] = {r, slot_n(*s), 0u};/

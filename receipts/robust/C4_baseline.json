@@ -1,0 +1,15 @@
+{
+  "engine": "BaselineLinearClassifier",
+  "mode": "baseline",
+  "rules_count": 15000,
+  "packets_count": 20000,
+  "init_time_ms": 0.950209,
+  "init_memory_delta_mib": 6.67969,
+  "peak_memory_mib": 6.67969,
+  "throughput_mpps": 0.0388986,
+  "p99_batch_latency_us": 1951.69,
+  "p99_latency_us": 1951.69,
+  "avg_update_us": 0,
+  "p99_update_us": 0,
+  "action_checksum": 26210
+}

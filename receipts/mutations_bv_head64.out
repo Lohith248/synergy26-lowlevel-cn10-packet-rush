@@ -1,0 +1,21 @@
+mutant 1 [fuzz_wide 300] MISSED   | s/if (B.first\[b\] > best) return;/if (B.first[b] >= best) return;/
+mutant 2 [fuzz_wide 300] MISSED   | s/                if (rk > best) return;/                if (rk >= bes
+mutant 3 [fuzz_wide 300] CAUGHT MISMATCH iter=9 n=1 wc=1.00 pkt=0 got=0 want=2 | s/        if (B.dead) acc = _mm256_and_si256(acc, 
+mutant 4 [fuzz_wide 300] CAUGHT MISMATCH iter=3 n=0 wc=0.90 pkt=1 got=0 want=3 | s/b\[i\] = uint16_t(~R\[i\].nhi\[lane\]) >> (D == 
+mutant 5 [fuzz_wide 300] CAUGHT MISMATCH iter=3 n=0 wc=0.90 pkt=3 got=3 want=0 | s/    map\[L\] = 1;/    map[L] = 0;/
+mutant 6 [fuzz_wide 300] CAUGHT MISMATCH iter=3 n=0 wc=0.90 pkt=3 got=3 want=0 | s/B.base\[f\] + (val\[i\] >= L ? 1u : cls_of\[val\
+mutant 7 [fuzz_wide 300] CAUGHT MISMATCH iter=3 n=0 wc=0.90 pkt=1 got=0 want=3 | s/    for (uint32_t c = 0; c < ncls; ++c) std::mem
+mutant 8 [fuzz_wide 300] CAUGHT MISMATCH iter=3 n=0 wc=0.90 pkt=5 got=3 want=0 | s/if (hi\[i\] + 1 < D) starts.push_back(hi\[i\] + 
+mutant 9 [fuzz_wide 300] MISSED   | s/            chi\[i\] = hi\[i\] >> shift;/            chi[i] = (hi[i]
+mutant 10 [fuzz_wide 300] MISSED   | s/if (full ? free_blk\[j\] != 0 : unnamed_in(s0, e0)) bit_set/if (fals
+mutant 11 [fuzz_wide 300] MISSED   | s/map\[port\] = uint8_t(port >> shift);/map[port] = uint8_t((port >> s
+mutant 12 [fuzz_wide 300] CAUGHT MISMATCH iter=9 n=1 wc=1.00 pkt=0 got=0 want=2 | s/    B.alive\[i >> 8\].w\[(i >> 6) \& 3\] \&= ~(u
+mutant 13 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=21 got=3 want=0 | s/B.first\[b\] = B.rank\[size_t(b) \* 256\];/B.fir
+mutant 14 [fuzz_wide 300] CAUGHT MISMATCH iter=11 n=50 wc=0.30 pkt=39 got=2 want=3 | s/        if ((c \& m) == v) bit_set/        if ((
+mutant 15 [churn_wide 40000 128 2] MISSED   | s/residual_recs(store_, long(pos), nullptr)/residual_recs(store_, -1, 
+mutant 16 [churn_wide 40000 128 2] MISSED   | s/grown_bv = bv_build(residual_recs(store_, pos, \&rec));/grown_bv = b
+mutant 17 [bv_directed ] MISSED   | s/if (B.first\[b\] > best) return;/if (B.first[b] >= best) return;/
+mutant 18 [bv_directed ] MISSED   | s/                if (rk > best) return;/                if (rk >= bes
+mutant 19 [bv_directed ] MISSED   | s/residual_recs(store_, long(pos), nullptr)/residual_recs(store_, -1, 
+mutant 20 [bv_directed ] MISSED   | s/grown_bv = bv_build(residual_recs(store_, pos, \&rec));/grown_bv = b
+mutant 21 [bv_directed ] MISSED   | s/B.first\[b\] = B.rank\[size_t(b) \* 256\];/B.first[b] = B.rank[std::

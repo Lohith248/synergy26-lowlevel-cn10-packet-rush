@@ -1,0 +1,205 @@
+2026-11-13T17:03:23+05:30
+ 17:03:23 up 2 days,  5:44,  0 users,  load average: 4.69, 5.98, 6.46
+UNINSTRUMENTED: gcc 11.4, seed 42, CPU 4
+ROUND 1 ENGINE v9 SCEN s01
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 5298
+cycles 111.54  instr 301.79  br_miss 0.79  L1D_miss 6.78  LLC_miss 0.00   IPC 2.71
+ROUND 1 ENGINE v9 SCEN s02
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 21938
+cycles 268.48  instr 757.58  br_miss 2.30  L1D_miss 9.02  LLC_miss 0.01   IPC 2.82
+ROUND 1 ENGINE v9 SCEN s03
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 36158
+cycles 389.87  instr 1008.07  br_miss 3.54  L1D_miss 13.99  LLC_miss 0.07   IPC 2.59
+ROUND 1 ENGINE v9 SCEN s04
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 19099
+cycles 103.50  instr 435.10  br_miss 0.05  L1D_miss 0.05  LLC_miss 0.00   IPC 4.20
+ROUND 1 ENGINE v9 SCEN s05
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 21938
+cycles 280.02  instr 757.58  br_miss 2.29  L1D_miss 9.08  LLC_miss 0.02   IPC 2.71
+ROUND 1 ENGINE v13 SCEN s01
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 5298
+cycles 120.60  instr 301.79  br_miss 0.64  L1D_miss 6.75  LLC_miss 0.01   IPC 2.50
+ROUND 1 ENGINE v13 SCEN s02
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 21938
+cycles 237.46  instr 643.87  br_miss 1.94  L1D_miss 12.65  LLC_miss 0.05   IPC 2.71
+ROUND 1 ENGINE v13 SCEN s03
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 36158
+cycles 324.20  instr 890.80  br_miss 2.13  L1D_miss 18.48  LLC_miss 0.10   IPC 2.75
+ROUND 1 ENGINE v13 SCEN s04
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 19099
+cycles 102.50  instr 435.10  br_miss 0.05  L1D_miss 0.05  LLC_miss 0.00   IPC 4.24
+ROUND 1 ENGINE v13 SCEN s05
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 21938
+cycles 233.80  instr 643.87  br_miss 1.93  L1D_miss 12.98  LLC_miss 0.01   IPC 2.75
+ROUND 2 ENGINE v9 SCEN s01
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 5298
+cycles 127.70  instr 301.79  br_miss 0.79  L1D_miss 6.83  LLC_miss 0.01   IPC 2.36
+ROUND 2 ENGINE v9 SCEN s02
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 21938
+cycles 276.90  instr 757.58  br_miss 2.29  L1D_miss 9.05  LLC_miss 0.01   IPC 2.74
+ROUND 2 ENGINE v9 SCEN s03
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 36158
+cycles 408.79  instr 1008.07  br_miss 3.56  L1D_miss 14.00  LLC_miss 0.16   IPC 2.47
+ROUND 2 ENGINE v9 SCEN s04
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 19099
+cycles 103.39  instr 435.10  br_miss 0.05  L1D_miss 0.05  LLC_miss 0.00   IPC 4.21
+ROUND 2 ENGINE v9 SCEN s05
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 21938
+cycles 277.88  instr 757.58  br_miss 2.28  L1D_miss 9.07  LLC_miss 0.01   IPC 2.73
+ROUND 2 ENGINE v13 SCEN s01
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 5298
+cycles 122.29  instr 301.79  br_miss 0.61  L1D_miss 6.70  LLC_miss 0.01   IPC 2.47
+ROUND 2 ENGINE v13 SCEN s02
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 21938
+cycles 236.36  instr 643.87  br_miss 1.93  L1D_miss 12.99  LLC_miss 0.02   IPC 2.72
+ROUND 2 ENGINE v13 SCEN s03
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 36158
+cycles 327.16  instr 890.80  br_miss 2.14  L1D_miss 18.60  LLC_miss 0.12   IPC 2.72
+ROUND 2 ENGINE v13 SCEN s04
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 19099
+cycles 102.78  instr 435.10  br_miss 0.05  L1D_miss 0.04  LLC_miss 0.00   IPC 4.23
+ROUND 2 ENGINE v13 SCEN s05
+rdpmc cap 1 index 0
+br_miss rdpmc index 2
+chk 21938
+cycles 235.35  instr 643.87  br_miss 1.94  L1D_miss 12.85  LLC_miss 0.01   IPC 2.74
+INSTRUMENTED: candidate counts only; do not compare these timings with release measurements
+--- v9/classifier.cpp	2026-11-13 16:06:34.451735280 +0530
++++ v9s/classifier.cpp	2026-11-13 16:00:34.922681805 +0530
+@@ -852,6 +852,9 @@
+ #endif
+ 
+ // First confirmed rule in rank order that ranks at or before `best` wins; blocks that start behind `best` are skipped.
++#ifdef R3_STATS
++static unsigned long long g_bvc;
++#endif
+ inline void bv_search(const BitRes& B, const BvBlk* const* rp, const PacketVec& pv, uint64_t& best, uint8_t& act) {
+     const uint32_t W = B.W;
+     for (uint32_t b = 0; b < W; ++b) {
+@@ -891,6 +894,9 @@
+                 const size_t i = size_t(b) * 256 + q * 64 + size_t(__builtin_ctzll(x));
+                 const uint64_t rk = B.rank[i];
+                 if (rk > best) return;
++#ifdef R3_STATS
++                ++g_bvc;
++#endif
+                 if (rec_matches(B.recs[i], pv)) {
+                     best = rk;
+                     act = B.recs[i].val[13];
+@@ -1685,7 +1691,7 @@
+ 
+ #ifdef R3_STATS
+ static unsigned long long g_chk, g_bk, g_pk;
+-struct StatDump { ~StatDump() { std::fprintf(stderr, "checks/pkt %.2f buckets/pkt %.2f\n", double(g_chk)/g_pk, double(g_bk)/g_pk); } } g_sd;
++struct StatDump { ~StatDump() { std::fprintf(stderr, "checks/pkt %.2f buckets/pkt %.2f bvcand/pkt %.3f\n", double(g_chk)/g_pk, double(g_bk)/g_pk, double(g_bvc)/g_pk); } } g_sd;
+ #endif
+ struct Bk {
+     uint32_t off;  // first record in the table's arena
+In file included from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/string:52,
+                 from ~/lab/r3gate/kit/include/types.h:4,
+                 from ~/lab/r3gate/kit/include/classifier_interface.h:3,
+                 from v9s/classifier.h:5,
+                 from v9s/classifier.cpp:24:
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, std::vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_heap.h:223:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  223 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+STATS ENGINE v9s SCEN s02
+rdpmc cap 1 index 0
+  bv: n=1326 W=6 rows=807 cap=256 fields: sport(11 cls, 0.341) dport(11 cls, 0.359) iface(10 cls, 0.400) dscp(8 cls, 0.416) plen(8 cls, 0.500) proto(5 cls, 0.529) vlan(289 cls, 0.601) region(18 cls, 0.619) flags(16 cls, 0.627) ttl(6 cls, 0.648) dip(209 cls, 0.715) sip(210 cls, 0.722) icmp(6 cls, 0.816)
+rebuild: 15000 entries, 15000 live, cat=0 residual=0
+000000000000000000000  active lanes 0 of 21
+  table dims 4 14 14 rules 8893 buckets 8220 cap 32768
+  table dims 1 14 14 rules 3559 buckets 3453 cap 16384
+  table dims 9 10 14 rules 1222 buckets 1111 cap 4096
+br_miss rdpmc index 2
+chk 21938
+checks/pkt 0.07 buckets/pkt 0.95 bvcand/pkt 0.608
+cycles 281.67  instr 786.67  br_miss 2.32  L1D_miss 9.31  LLC_miss 0.01   IPC 2.79
+STATS ENGINE v9s SCEN s03
+rdpmc cap 1 index 0
+  bv: n=2475 W=10 rows=793 cap=256 fields: sport(11 cls, 0.355) dport(11 cls, 0.371) dscp(8 cls, 0.418) region(18 cls, 0.463) iface(10 cls, 0.497) plen(8 cls, 0.500) proto(5 cls, 0.537) flags(16 cls, 0.622) ttl(6 cls, 0.649) dip(215 cls, 0.709) sip(214 cls, 0.738) vlan(265 cls, 0.818) icmp(6 cls, 0.831)
+rebuild: 40000 entries, 40000 live, cat=0 residual=0
+000000000000000000000  active lanes 0 of 21
+  table dims 1 14 14 rules 23315 buckets 18966 cap 65536
+  table dims 4 14 14 rules 9815 buckets 8973 cap 32768
+  table dims 9 10 14 rules 3405 buckets 2621 cap 8192
+  table dims 10 11 14 rules 990 buckets 846 cap 4096
+br_miss rdpmc index 2
+chk 36158
+checks/pkt 0.30 buckets/pkt 1.65 bvcand/pkt 1.068
+cycles 408.57  instr 1049.46  br_miss 3.58  L1D_miss 13.97  LLC_miss 0.19   IPC 2.57
+In file included from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/string:52,
+                 from ~/lab/r3gate/kit/include/types.h:4,
+                 from ~/lab/r3gate/kit/include/classifier_interface.h:3,
+                 from v13/classifier.h:5,
+                 from v13/classifier.cpp:26:
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, std::vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_heap.h:223:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  223 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+STATS ENGINE v13 SCEN s02
+rdpmc cap 1 index 0
+  bv: n=1326 W=6 rows=933 cap=256 fields: sport(74 cls, 0.286) dport(74 cls, 0.305) iface(10 cls, 0.400) dscp(8 cls, 0.416) plen(8 cls, 0.500) proto(5 cls, 0.529) vlan(289 cls, 0.601) region(18 cls, 0.619) flags(16 cls, 0.627) ttl(6 cls, 0.648) dip(209 cls, 0.715) sip(210 cls, 0.722) icmp(6 cls, 0.816)
+rebuild: 15000 entries, 15000 live, cat=0 residual=0
+000000000000000000000  active lanes 0 of 21
+  table dims 4 14 14 rules 8893 buckets 8220 cap 32768
+  table dims 1 14 14 rules 3559 buckets 3453 cap 16384
+  table dims 9 10 14 rules 1222 buckets 1111 cap 4096
+br_miss rdpmc index 2
+chk 21938
+checks/pkt 0.07 buckets/pkt 0.95 bvcand/pkt 0.223
+cycles 232.22  instr 661.82  br_miss 1.91  L1D_miss 12.94  LLC_miss 0.04   IPC 2.85
+STATS ENGINE v13 SCEN s03
+rdpmc cap 1 index 0
+  bv: n=2475 W=10 rows=919 cap=256 fields: sport(74 cls, 0.301) dport(74 cls, 0.317) dscp(8 cls, 0.418) region(18 cls, 0.463) iface(10 cls, 0.497) plen(8 cls, 0.500) proto(5 cls, 0.537) flags(16 cls, 0.622) ttl(6 cls, 0.649) dip(215 cls, 0.709) sip(214 cls, 0.738) vlan(265 cls, 0.818) icmp(6 cls, 0.831)
+rebuild: 40000 entries, 40000 live, cat=0 residual=0
+000000000000000000000  active lanes 0 of 21
+  table dims 1 14 14 rules 23315 buckets 18966 cap 65536
+  table dims 4 14 14 rules 9815 buckets 8973 cap 32768
+  table dims 9 10 14 rules 3405 buckets 2621 cap 8192
+  table dims 10 11 14 rules 990 buckets 846 cap 4096
+br_miss rdpmc index 2
+chk 36158
+checks/pkt 0.30 buckets/pkt 1.65 bvcand/pkt 0.271
+cycles 318.40  instr 916.71  br_miss 2.11  L1D_miss 19.15  LLC_miss 0.19   IPC 2.88

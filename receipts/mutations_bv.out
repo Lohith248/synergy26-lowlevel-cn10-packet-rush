@@ -1,0 +1,21 @@
+mutant 1 [fuzz_wide 300] MISSED   | s/if (B.first\[b\] > best) return;/if (B.first[b] >= best) return;/
+mutant 2 [fuzz_wide 300] MISSED   | s/                if (rk > best) return;/                if (rk >= bes
+mutant 3 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=50 got=2 want=0 | s/        if (B.dead) acc = _mm256_and_si256(acc, 
+mutant 4 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=0 got=2 want=1 | s/b\[i\] = uint16_t(~R\[i\].nhi\[lane\]) >> (D == 
+mutant 5 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=2 got=1 want=0 | s/    map\[L\] = 1;/    map[L] = 0;/
+mutant 6 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=2 got=1 want=0 | s/B.base\[f\] + (val\[i\] >= L ? 1u : cls_of\[val\
+mutant 7 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=0 got=2 want=1 | s/    for (uint32_t c = 0; c < ncls; ++c) std::mem
+mutant 8 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=35 got=0 want=2 | s/if (hi\[i\] + 1 < D) starts.push_back(hi\[i\] + 
+mutant 9 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=38 got=0 want=2 | s/            chi\[i\] = hi\[i\] >> shift;/       
+mutant 10 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=0 got=2 want=1 | s/if (full ? free_blk\[j\] != 0 : unnamed_in(s0, e
+mutant 11 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=61 got=0 want=1 | s/map\[port\] = uint8_t(port >> shift);/map[port] 
+mutant 12 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=50 got=2 want=0 | s/    B.alive\[i >> 8\].w\[(i >> 6) \& 3\] \&= ~(u
+mutant 13 [fuzz_wide 300] MISSED   | s/B.first\[b\] = B.rank\[size_t(b) \* 256\];/B.first[b] = B.rank[std::
+mutant 14 [fuzz_wide 300] CAUGHT MISMATCH iter=15 n=600 wc=0.00 pkt=1 got=2 want=0 | s/        if ((c \& m) == v) bit_set/        if ((
+mutant 15 [churn_wide 40000 128 2] MISSED   | s/residual_recs(store_, long(pos), nullptr)/residual_recs(store_, -1, 
+mutant 16 [churn_wide 40000 128 2] MISSED   | s/grown_bv = bv_build(residual_recs(store_, pos, \&rec));/grown_bv = b
+mutant 17 [bv_directed ] CAUGHT FAIL: A n=257 dport=5 vlan=7 got=0 want=2 | s/if (B.first\[b\] > best) return;/if (B.first[b] 
+mutant 18 [bv_directed ] CAUGHT FAIL: A n=128 dport=5 vlan=7 got=0 want=2 | s/                if (rk > best) return;/         
+mutant 19 [bv_directed ] CAUGHT FAIL: C everything deleted dport=3296 vlan=7 got=2 | s/residual_recs(store_, long(pos), nullptr)/residu
+mutant 20 [bv_directed ] CAUGHT FAIL: B step dport=2206 vlan=8 got=1 want=0 | s/grown_bv = bv_build(residual_recs(store_, pos, \
+mutant 21 [bv_directed ] MISSED   | s/B.first\[b\] = B.rank\[size_t(b) \* 256\];/B.first[b] = B.rank[std::

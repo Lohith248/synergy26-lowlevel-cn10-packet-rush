@@ -1,0 +1,22 @@
+engine: ~/lab/r4/v13  cpp sha256 b25958881c9abb9d  x86_64-conda-linux-gnu-g++ (conda-forge gcc 11.4.0-13) 11.4.0  iters=300 first=0 cpus=16-23
+OK            alloc-fail[native head64]      2s  OK: allocation failures injected=1165; rejected replace=199 insert=10 delete=956; committed replace=1191 inser
+OK            alloc-fail[native]             1s  OK: allocation failures injected=590; rejected replace=112 insert=10 delete=468; committed replace=1191 insert
+OK            alloc-fail[tables+bv]          1s  OK: allocation failures injected=1165; rejected replace=199 insert=10 delete=956; committed replace=1191 inser
+OK            asan+ubsan fuzz                2s  OK: 248960 differential checks, 30300 updates, 101 iterations
+OK            bv_directed[native]            2s  OK: bv directed tests
+OK            bv_directed[tables+bv]         1s  OK: bv directed tests
+OK            churn[base128]                 0s  OK: churn release check
+OK            churn[base15000]               0s  OK: churn release check
+OK            fuzz[native head0]             2s  OK: 736640 differential checks, 90000 updates, 300 iterations
+OK            fuzz[native head64]            2s  OK: 736640 differential checks, 90000 updates, 300 iterations
+OK            fuzz[native]                   2s  OK: 736640 differential checks, 90000 updates, 300 iterations
+OK            fuzz[native tables+bv]         2s  OK: 736640 differential checks, 90000 updates, 300 iterations
+OK            fuzz[x86-64]                   2s  OK: 736640 differential checks, 90000 updates, 300 iterations
+OK            fuzz[x86-64-v2]                1s  OK: 736640 differential checks, 90000 updates, 300 iterations
+OK            fuzz[x86-64-v3]                2s  OK: 736640 differential checks, 90000 updates, 300 iterations
+OK            interleaved[seed1]             2s  OK: interleaved release check
+OK            interleaved[seed2]             1s  OK: interleaved release check
+OK            interleaved[seed3]             1s  OK: interleaved release check
+OK            interleaved[tables+bv]         1s  OK: interleaved release check
+OK            ubsan alloc-fail               2s  OK: allocation failures injected=1165; rejected replace=199 insert=10 delete=956; committed replace=1191 inser
+WIDE SUMMARY: 20 OK, 0 WARN, 0 FAIL   (logs: ~/lab/res/ev13/wide)

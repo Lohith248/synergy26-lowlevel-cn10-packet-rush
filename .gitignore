@@ -1,0 +1,7 @@
+/benchmark_baseline
+/benchmark_starter
+/out/
+/data/seed*/
+*_result.json
+__pycache__/
+*.act

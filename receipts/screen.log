@@ -1,0 +1,54 @@
+2026-11-13T16:50:24+05:30
+host: 12th Gen Intel(R) Core(TM) i9-12900K, 24 vCPUs, pinned CPU 4
+compiler: x86_64-conda-linux-gnu-g++ (conda-forge gcc 13.4.0-20) 13.4.0
+ 16:50:24 up 2 days,  5:31,  0 users,  load average: 4.68, 5.88, 6.46
+f682425dc0456c12bdeed23066b0e5e8f92a832954aa6cef2f97ecafac2abb67  ~/lab/r4/v9/classifier.h
+9a3c34c03ae9435d8954af048d598d05c4cd7847c3201d86343c35330642b230  ~/lab/r4/v9/classifier.cpp
+cbbff101328a5e9cb49bf16db8ab51c896f073def2479bc65c8cff465a6cb68b  ~/lab/r4/v13/classifier.h
+b25958881c9abb9d07aaf2edb4b4edbec158e723870eb95344259c9634f3c8bb  ~/lab/r4/v13/classifier.cpp
+6dea4f96421cb88d177360cb2bddc9c6fb1d8a45a267213d2775bf3a9ee01426  ~/lab/r3gate/tools/bench_median.cpp
+0ab217f07d38c784d59f55d4889a81b83b231e5d8b8ef376991587ee2e78a633  ~/lab/r3gate/tools/paired_report.cpp
+A=~/lab/r4/v9
+B=~/lab/r4/v13
+RUNS=10 SEEDS=42 2026 BUILDS=native SCEN=s01 s02 s03 s04 s05
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from ~/lab/r4/v9/classifier.cpp:28:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from ~/lab/r4/v13/classifier.cpp:30:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+ok native seed 42 s01: 10 paired runs, parity + RSS checked on every run
+ok native seed 42 s02: 10 paired runs, parity + RSS checked on every run
+ok native seed 42 s03: 10 paired runs, parity + RSS checked on every run
+ok native seed 42 s04: 10 paired runs, parity + RSS checked on every run
+ok native seed 42 s05: 10 paired runs, parity + RSS checked on every run
+ok native seed 2026 s01: 10 paired runs, parity + RSS checked on every run
+ok native seed 2026 s02: 10 paired runs, parity + RSS checked on every run
+ok native seed 2026 s03: 10 paired runs, parity + RSS checked on every run
+ok native seed 2026 s04: 10 paired runs, parity + RSS checked on every run
+ok native seed 2026 s05: 10 paired runs, parity + RSS checked on every run
+PRIMARY: median over paired runs; delta = B vs A per run, median [min, max]. Negative batch delta = B faster.
+build      seed scen runs |  A med us  B med us         batch delta % |  A Mpps  B Mpps          Mpps delta % |  A RSS  B RSS
+native       42  s01   10 |     1.906     1.881    -0.4 [ -5.6, +5.2] |   32.62   33.39    +1.0 [ -6.7, +6.8] |    4.3    4.3
+native       42  s02   10 |     3.972     3.199   -20.1 [-23.7,-15.5] |   15.76   19.73   +25.0 [+17.9,+30.0] |   10.6   10.6
+native       42  s03   10 |     5.716     4.257   -25.0 [-27.3,-18.9] |   11.03   14.71   +32.6 [+22.6,+36.3] |   21.3   21.6
+native       42  s04   10 |     1.143     1.149    -0.7 [ -3.0, +1.1] |   54.15   54.74    +1.4 [ -2.6, +4.6] |    7.7    7.6
+native       42  s05   10 |     3.889     3.264   -17.1 [-22.0,-13.4] |   16.27   19.03   +20.5 [+10.5,+27.6] |   13.7   13.7
+native     2026  s01   10 |     1.740     1.792    -2.6 [-16.0,+18.9] |   36.11   35.55    +2.0 [-13.1,+14.8] |    4.3    4.3
+native     2026  s02   10 |     3.391     2.854   -16.1 [-22.6, +6.7] |   18.49   21.51   +16.8 [-10.8,+29.7] |   10.6   10.5
+native     2026  s03   10 |     5.371     4.598   -14.7 [-19.7, -8.9] |   11.63   13.53   +15.9 [+10.4,+22.2] |   21.3   21.3
+native     2026  s04   10 |     0.876     0.881    +2.0 [ -9.5,+12.6] |   69.10   67.22    -3.2 [ -8.5, +9.1] |    7.8    7.9
+native     2026  s05   10 |     3.430     2.915   -14.1 [-21.7, -9.7] |   18.44   21.36   +14.7 [ +9.9,+28.3] |   13.4   13.8
+
+SECONDARY: official weighted proxy per run (local host, not a judge prediction)
+native     seed 42  A 79.44  B 83.19  paired delta +4.56 [+1.67, +6.23]
+native     seed 2026 A 81.23  B 84.48  paired delta +3.15 [+1.38, +5.44]
+PAIRED RUN PASSED (all runs byte-identical to reference, RSS <= 32 MiB)

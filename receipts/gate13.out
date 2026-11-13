@@ -1,0 +1,82 @@
+sha256sum: WARNING: 1 line is improperly formatted
+gate out=~/lab/res/ev13/gate13 CXX=x86_64-conda-linux-gnu-g++ CPU=4 SCOPE=full RUNS=3 TRIALS=3
+ISA levels executed here: x86-64 x86-64-v2 x86-64-v3; compiled only: x86-64-v4
+cbbff101328a5e9cb49bf16db8ab51c896f073def2479bc65c8cff465a6cb68b  ~/lab/r4/v13/classifier.h
+b25958881c9abb9d07aaf2edb4b4edbec158e723870eb95344259c9634f3c8bb  ~/lab/r4/v13/classifier.cpp
+f682425dc0456c12bdeed23066b0e5e8f92a832954aa6cef2f97ecafac2abb67  ~/lab/r4/v9/classifier.h
+9a3c34c03ae9435d8954af048d598d05c4cd7847c3201d86343c35330642b230  ~/lab/r4/v9/classifier.cpp
+fuzz[x86-64 ]: OK: 1961728 differential checks, 240000 updates, 800 iterations
+fuzz[x86-64 -DCN10_FORCE_HEAD=64]: OK: 1961728 differential checks, 240000 updates, 800 iterations
+fuzz[x86-64-v2 ]: OK: 1961728 differential checks, 240000 updates, 800 iterations
+fuzz[x86-64-v2 -DCN10_FORCE_HEAD=64]: OK: 1961728 differential checks, 240000 updates, 800 iterations
+fuzz[x86-64-v3 ]: OK: 1961728 differential checks, 240000 updates, 800 iterations
+fuzz[x86-64-v3 -DCN10_FORCE_HEAD=64]: OK: 1961728 differential checks, 240000 updates, 800 iterations
+fuzz[x86-64-v4 ]: COMPILED ONLY (this CPU lacks x86-64-v4)
+fuzz[x86-64-v4 -DCN10_FORCE_HEAD=64]: COMPILED ONLY (this CPU lacks x86-64-v4)
+fuzz[native ]: OK: 3676928 differential checks, 450000 updates, 1500 iterations
+fuzz[native -DCN10_FORCE_HEAD=0]: OK: 3676928 differential checks, 450000 updates, 1500 iterations
+fuzz[native -DCN10_FORCE_HEAD=4]: OK: 3676928 differential checks, 450000 updates, 1500 iterations
+fuzz[native -DCN10_FORCE_HEAD=64]: OK: 3676928 differential checks, 450000 updates, 1500 iterations
+alloc-fail[]: OK: allocation failures injected=69; rejected replace=33 insert=2 delete=34; committed replace=625 insert=640 delete=655
+alloc-fail[-DCN10_FORCE_HEAD=64]: OK: allocation failures injected=69; rejected replace=33 insert=2 delete=34; committed replace=625 insert=640 delete=655
+interleaved[seed 1]: OK: interleaved release check
+interleaved[seed 2]: OK: interleaved release check
+interleaved[seed 3]: OK: interleaved release check
+churn[250k pairs, 15000 base]: OK: churn release check
+churn[250k pairs, 128 base]: OK: churn release check
+planted bug 1 caught by fuzz: MISMATCH iter=10 n=50 wc=0.00 pkt=31 got=0 want=2
+planted bug 2 caught by fuzz: MISMATCH iter=17 n=600 wc=0.65 pkt=177 got=3 want=0
+planted bug 3 caught by fuzz: MISMATCH iter=85 n=50 wc=0.00 pkt=19 got=0 want=3
+planted bug 4 caught by fuzz: MISMATCH iter=17 n=600 wc=0.65 pkt=224 got=1 want=2
+planted bug 5 caught by fuzz: MISMATCH iter=16 n=600 wc=0.30 pkt=54 got=0 want=2
+planted bug 6 caught by fuzz: MISMATCH iter=8 n=1 wc=0.90 pkt=23 got=131 want=0
+planted bug 7 caught by fuzz: MISMATCH iter=22 n=3000 wc=0.65 pkt=17 got=3 want=2
+planted bug 8 caught by fuzz: MISMATCH iter=22 n=3000 wc=0.65 pkt=5 got=1 want=0
+planted bug 9 caught by fuzz: MISMATCH iter=13 n=50 wc=0.90 pkt=33 got=3 want=1
+planted bug 10 caught by fuzz: MISMATCH iter=112 n=50 wc=0.65 pkt=11 got=0 want=3
+planted bug 11 caught by fuzz: MISMATCH iter=8 n=1 wc=0.90 pkt=1 got=3 want=0
+planted bug 12 caught by fuzz: MISMATCH iter=11 n=50 wc=0.30 pkt=4 got=0 want=1
+planted bug 13 caught by alloc_fail: FAIL: replace with allocation 1 failing changed a verdict (iter 36 ste
+planted bug 14 caught by alloc_fail: FAIL: replace with allocation 1 failing changed a verdict (iter 36 ste
+planted bug 15 caught by alloc_fail: FAIL: replace with allocation 6 failing changed a verdict (iter 36 ste
+asan+ubsan fuzz: OK: 369024 differential checks, 45000 updates, 150 iterations
+ubsan alloc-fail: OK: allocation failures injected=69; rejected replace=33 insert=2 delete=34; committed replace=312 insert=325 delete=323
+benchmark run 1 done (order: old new)
+benchmark run 2 done (order: new old)
+benchmark run 3 done (order: old new)
+180 trials, all with reference-identical verdict bytes and peak RSS <= 32 MiB; max RSS old 24.03 MiB, new 24.56 MiB
+A. author method: median-throughput trial per run, weighted total
+  seed 42 run 1: old  77.59  new  84.52  delta +6.93
+  seed 42 run 2: old  78.00  new  81.95  delta +3.96
+  seed 42 run 3: old  78.84  new  80.99  delta +2.15
+  seed 42 paired delta: median +3.96, range [+2.15, +6.93]
+  seed  7 run 1: old  81.31  new  84.31  delta +3.00
+  seed  7 run 2: old  80.73  new  82.89  delta +2.16
+  seed  7 run 3: old  79.79  new  84.01  delta +4.22
+  seed  7 paired delta: median +3.00, range [+2.16, +4.22]
+B. review method: median of all trial scores per scenario
+  seed 42 old: weighted  78.18
+     s01  96.98 (33.2 Mpps [31.1,35] upd p99 max 0)
+     s02  71.98 (15.7 Mpps [15,16.3] upd p99 max 0)
+     s03  59.99 (10.5 Mpps [10.4,11.5] upd p99 max 0)
+     s04 100.00 (46 Mpps [40.1,47.8] upd p99 max 0)
+     s05  71.22 (15.5 Mpps [14.9,16.6] upd p99 max 0.375)
+  seed 42 new: weighted  82.57
+     s01  94.88 (32.7 Mpps [30.6,36.4] upd p99 max 0)
+     s02  79.38 (19.3 Mpps [17.9,20.1] upd p99 max 0)
+     s03  66.75 (13.6 Mpps [12.7,14.5] upd p99 max 0)
+     s04 100.00 (47.7 Mpps [46.3,48.3] upd p99 max 0)
+     s05  78.89 (18.5 Mpps [17.8,20] upd p99 max 0.394)
+  seed  7 old: weighted  80.04
+     s01 100.00 (33.4 Mpps [32,34.7] upd p99 max 0)
+     s02  73.91 (16.8 Mpps [16,17.8] upd p99 max 0)
+     s03  61.77 (11.4 Mpps [10.6,11.9] upd p99 max 0)
+     s04 100.00 (58 Mpps [56,61.7] upd p99 max 0)
+     s05  74.09 (16.7 Mpps [16,17.5] upd p99 max 0.352)
+  seed  7 new: weighted  84.31
+     s01 100.00 (32.5 Mpps [32.1,37.8] upd p99 max 0)
+     s02  80.14 (19.7 Mpps [18.2,21.6] upd p99 max 0)
+     s03  67.87 (13.9 Mpps [12.4,14.2] upd p99 max 0)
+     s04 100.00 (59.3 Mpps [52.9,63.5] upd p99 max 0)
+     s05  81.59 (20 Mpps [18.9,21.7] upd p99 max 0.372)
+GATE PASSED

@@ -1,0 +1,13 @@
+2026-11-13T16:58:14+05:30
+host: 12th Gen Intel(R) Core(TM) i9-12900K, 24 vCPUs, pinned CPU 4
+compiler: x86_64-conda-linux-gnu-g++ (conda-forge gcc 13.4.0-20) 13.4.0
+ 16:58:14 up 2 days,  5:39,  0 users,  load average: 6.06, 6.80, 6.74
+f682425dc0456c12bdeed23066b0e5e8f92a832954aa6cef2f97ecafac2abb67  ~/lab/r4/v9/classifier.h
+9a3c34c03ae9435d8954af048d598d05c4cd7847c3201d86343c35330642b230  ~/lab/r4/v9/classifier.cpp
+cbbff101328a5e9cb49bf16db8ab51c896f073def2479bc65c8cff465a6cb68b  ~/lab/r4/v13/classifier.h
+b25958881c9abb9d07aaf2edb4b4edbec158e723870eb95344259c9634f3c8bb  ~/lab/r4/v13/classifier.cpp
+6dea4f96421cb88d177360cb2bddc9c6fb1d8a45a267213d2775bf3a9ee01426  ~/lab/r3gate/tools/bench_median.cpp
+0ab217f07d38c784d59f55d4889a81b83b231e5d8b8ef376991587ee2e78a633  ~/lab/r3gate/tools/paired_report.cpp
+A=~/lab/r4/v9
+B=~/lab/r4/v13
+RUNS=10 SEEDS=11 23 BUILDS=native SCEN=s01 s02 s03 s04 s05

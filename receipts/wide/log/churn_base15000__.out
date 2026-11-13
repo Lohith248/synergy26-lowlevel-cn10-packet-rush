@@ -1,0 +1,2 @@
+churn: 40000 pairs, update p99 0.250 us, max 4.5 us, peak RSS 8.26 MiB, 512 checks
+OK: churn release check

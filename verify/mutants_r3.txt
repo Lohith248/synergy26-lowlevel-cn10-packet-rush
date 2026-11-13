@@ -1,0 +1,15 @@
+fuzz|s/uint32_t k = uint32_t(__builtin_ctz(m | 16u));/uint32_t k = uint32_t(__builtin_ctz(m | 8u));/
+fuzz|s/const bool take = (k < 4) \& (s->first_prio <= best_prio);/const bool take = (k < 4) \& (s->first_prio < best_prio);/
+fuzz|s/if (rk > best) break;  \/\/ inclusive/if (rk >= best) break;  \/\/ inclusive/
+fuzz|s/\& 0x1FF) == 0x1FF;/\& 0x1FE) == 0x1FE;/
+fuzz|s/        if (ix.delta.n) sweep_search(ix.delta, q.px, best, act);/        (void)0;/
+fuzz|s/^        s.lanes\[pos\] = 0xFFFF;$/        (void)0;/
+fuzz|s/q.short_pkt = pk\[i\].packet_len < ix.cat_len_low;/q.short_pkt = false;/
+fuzz|s/^    s.first_prio = rec_prio(b\[0\]);$/    s.first_prio = ~0u;/
+fuzz|s/nx.cat_len_low = c.packet_len.low;/nx.cat_len_low = 0;/
+fuzz|s/(i < a.n \&\& a.rank\[i\] < b.rank\[j\])/(i < a.n)/
+fuzz|s/        else sweep_kill(ix.residual, rk);/        else (void)rk;/
+fuzz|s/m |= (!r.protocol.wildcard) << 8/m |= 1u << 8/
+alloc_fail|s/if (t.arena.size() + need > t.arena.capacity()) {/if (t.arena.size() + need > t.arena.capacity() + 64) {/
+alloc_fail|s/size_t put_need(const BSlot\* s) { return s ? 2 \* size_t(slot_n(\*s)) : 2; }/size_t put_need(const BSlot* s) { return s ? 0 : 0; }/
+alloc_fail|s/            prefault(repacked);/            prefault(repacked); repacked.clear(); repacked.shrink_to_fit();/

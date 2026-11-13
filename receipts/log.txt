@@ -1,0 +1,56 @@
+START 2026-11-13T16:52:03+05:30
+ 16:52:03 up 2 days,  5:32,  0 users,  load average: 3.29, 5.11, 6.13
+b25958881c9abb9d07aaf2edb4b4edbec158e723870eb95344259c9634f3c8bb  ~/lab/r4/v13/classifier.cpp
+cbbff101328a5e9cb49bf16db8ab51c896f073def2479bc65c8cff465a6cb68b  ~/lab/r4/v13/classifier.h
+9a3c34c03ae9435d8954af048d598d05c4cd7847c3201d86343c35330642b230  ~/lab/r4/v9/classifier.cpp
+f682425dc0456c12bdeed23066b0e5e8f92a832954aa6cef2f97ecafac2abb67  ~/lab/r4/v9/classifier.h
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from ~/lab/r4/v13/classifier.cpp:30:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+g13 compile x86-64 OK
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from ~/lab/r4/v13/classifier.cpp:30:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+g13 compile x86-64-v2 OK
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from ~/lab/r4/v13/classifier.cpp:30:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+g13 compile x86-64-v3 OK
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from ~/lab/r4/v13/classifier.cpp:30:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+g13 compile native OK
+In file included from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/algorithm:61,
+                 from ~/lab/r4/v13/classifier.cpp:30:
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/g13/env/lib/gcc/x86_64-conda-linux-gnu/13.4.0/include/c++/bits/stl_heap.h:224:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  224 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
+g13 compile znver3 OK
+g13 compile znver4 OK
+g13 compile skylake-avx512 OK
+g13 compile sapphirerapids OK
+stock gate PASSED 2026-11-13T16:57:29+05:30
+main paired DONE 2026-11-13T16:58:14+05:30
+holdout DONE 2026-11-13T16:58:31+05:30
+families DONE 2026-11-13T16:58:47+05:30
+update tail DONE 2026-11-13T17:00:08+05:30
+40-family and size checks DONE 2026-11-13T17:00:47+05:30
+DONE 2026-11-13T17:00:47+05:30

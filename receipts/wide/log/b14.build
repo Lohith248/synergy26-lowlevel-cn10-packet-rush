@@ -1,0 +1,10 @@
+In file included from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_algo.h:61,
+                 from ~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/string:52,
+                 from ~/lab/r3gate/kit/include/types.h:4,
+                 from ~/lab/r3gate/kit/include/classifier_interface.h:3,
+                 from ~/lab/r4/v13/classifier.h:5,
+                 from ~/lab/r4/v13/classifier.cpp:26:
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_heap.h: In function 'constexpr void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<packet_rush::RuleRec*, std::vector<packet_rush::RuleRec> >; _Distance = long int; _Tp = packet_rush::RuleRec; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<packet_rush::{anonymous}::residual_recs(const std::vector<packet_rush::OptimizedClassifier::Entry>&, long int, const packet_rush::RuleRec*)::<lambda(const packet_rush::RuleRec&, const packet_rush::RuleRec&)> >]':
+~/lab/env/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/bits/stl_heap.h:223:5: note: the ABI for passing parameters with 64-byte alignment has changed in GCC 4.6
+  223 |     __adjust_heap(_RandomAccessIterator __first, _Distance __holeIndex,
+      |     ^~~~~~~~~~~~~
