@@ -1,0 +1,56 @@
+# Fresh copy of commit 4edc947 (git archive), i9-12900K, built with g++ (conda-forge gcc 13.4.0-20) 13.4.0
+## 1. bash scripts/run_scenarios.sh (CPU 8)
+Packet Rush CN10 -- scenario run, seed 42
+[1/3] datasets ready in data/seed42
+[2/3] built with: -O3 -std=c++20 -Wall -Wextra -march=native -Iinclude (x86_64-conda-linux-gnu-g++ (conda-forge gcc 13.4.0-20) 13.4.0)
+[3/3] running (baseline = organiser's linear classifier; ours = starter/classifier.cpp)
+
+scenario               weight     Mpps  p99 batch us  RSS MiB  update p99 us   score  verdicts
+s01 correctness_small    0.15    34.27         2.782     4.27          0.000   97.47  MATCH vs baseline
+s02 scalability_medium   0.20    21.00         3.554    10.50          0.000   86.19  MATCH vs baseline
+s03 performance_large    0.25    16.06         5.554    21.55          0.000   71.95  MATCH vs baseline
+s04 adversarial_skew     0.20    54.88         2.642     7.57          0.000   98.66  MATCH vs baseline
+s05 dynamic_heavy        0.20    20.84         3.626    13.95          0.188   85.59  MATCH vs baseline
+weighted score (organiser formula, this machine): 86.70 / 100
+RESULT: every verdict identical to the baseline
+exit=0
+## 2. make test
+--- [Test 4: Dynamic Updates] ---
+>>> Test 4 Passed.
+
+./benchmark_baseline --rules data/sample_rules.bin --packets data/sample_packets.bin --updates data/sample_updates.bin --mode baseline --output baseline_result.json
+>>> Benchmark complete for [BaselineLinearClassifier]
+    Throughput:        1.50287 Mpps
+    P99 Batch Latency: 64.264 us
+    Peak Memory:       3.48047 MiB
+    P99 Update:        1.738 us
+./benchmark_starter --rules data/sample_rules.bin --packets data/sample_packets.bin --updates data/sample_updates.bin --mode optimized --output starter_result.json
+>>> Benchmark complete for [RewriteR1]
+    Throughput:        36.2495 Mpps
+    P99 Batch Latency: 2.77 us
+    Peak Memory:       4.96484 MiB
+    P99 Update:        0.288 us
+exit=0
+## 3. bash demo/run_demo.sh
+[b] packet: 10.1.2.3:51000 -> 192.168.7.9:443 proto 6 flags 0x02 region 3 vlan 100 iface 2 dscp 0 ttl 64 len 1500 (TCP SYN)
+    no existing rule matches (default verdict is DROP); the ACCEPT rule gets priority 1000
+[b] verdict: ACCEPT  (rule 1001: exact-match ACCEPT, priority 1000)   baseline agrees
+[c] insert rule 1002 (DROP dst 192.168.7.0/24, priority 999): verdict: DROP (insert took 0.42 us)   baseline agrees
+[d] delete rule 1002: verdict: ACCEPT (delete took 0.34 us)   baseline agrees
+[f] 100000 packets: 0 differences (half crafted to hit rules, batches of 64; 12224 ACCEPT, 87776 other)
+    ours: 34.00 Mpps over this run (this machine, not a benchmark)
+RESULT: all checks passed
+exit=0
+## 4. prebuilt binaries
+-- bin/benchmark_x86-64-v3
+s04 adversarial_skew     0.20    55.44         1.156     5.91          0.000  100.00  MATCH vs baseline
+s05 dynamic_heavy        0.20    20.96         3.512    11.57          0.301   86.33  MATCH vs baseline
+weighted score (organiser formula, this machine): 87.80 / 100
+RESULT: every verdict identical to the baseline
+exit=0
+-- bin/benchmark_x86-64-v2
+s04 adversarial_skew     0.20    52.86         1.230     5.91          0.000  100.00  MATCH vs baseline
+s05 dynamic_heavy        0.20    20.58         3.261    11.57          0.291   87.10  MATCH vs baseline
+weighted score (organiser formula, this machine): 86.71 / 100
+RESULT: every verdict identical to the baseline
+exit=0
